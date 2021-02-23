@@ -4,12 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>thymeleaf-bootstrap-autocomplete-input</artifactId>
-
     <properties>
-        <bootstrap.version>4.0.0-2</bootstrap.version>
-        <webjars-locator.version>0.30</webjars-locator.version>
-        <lombok.version>1.18.2</lombok.version>
+        <bootstrap.version>4.5.3</bootstrap.version>
+        <webjars-locator.version>0.39</webjars-locator.version>
+        <lombok.version>1.18.16</lombok.version>
     </properties>
 
     <!-- Inherit defaults from Spring Boot -->
@@ -18,6 +16,10 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.5.RELEASE</version>
     </parent>
+    <artifactId>thymeleaf-bootstrap-autocomplete-input</artifactId>
+    <name>thymeleaf-bootstrap-autocomplete-input</name>
+    <description>Getting Started with Spring Boot and Spring MVC</description>
+    <packaging>war</packaging>
 
     <!-- Add typical dependencies for a web application -->
     <dependencies>
@@ -49,10 +51,17 @@
             <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <!-- Package as an executable jar -->
     <build>
+        <finalName>ROOT</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
